@@ -1,8 +1,16 @@
 {
-  "name": "tstore",
-  "version": "1.0.0",
+  "name": "state-management-store",
+  "version": "1.0.4",
   "description": "基于观察者模式实现状态管理工具。",
-  "main": "dist/TStore.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "index.d.ts"
+  ],
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,6 +27,7 @@
     "webpack-cli": "^6.0.1"
   },
   "dependencies": {
-    "react": "^19.0.0"
+    "react": "^19.0.0",
+    "typescript": "^5.7.3"
   }
 }

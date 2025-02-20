@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "declaration": true,            // 启用生成 .d.ts 文件
+    "declarationDir": "./dist/types", // 输出的 .d.ts 文件目录
+    "outDir": "./dist",             // 编译后的 JS 文件输出目录
+    "module": "ESNext",             // 使用 ESNext 模块系统
+    "target": "ES5",                // 编译为 ES5 代码，兼容性较好
+    "moduleResolution": "node",     // 使用 Node 模块解析
+    "strict": true,                 // 开启严格模式
+    "esModuleInterop": true         // 允许与 ES6 模块互操作
+  },
+  "include": ["src/**/*"],          // 包括 src 目录中的所有文件
+  "exclude": ["node_modules"]       // 排除 node_modules 目录
+}

@@ -6,10 +6,13 @@ module.exports = {
   // 输入配置
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'TStore.js', // 打包后的文件名
-    library: 'TStore', // 可以通过全局变量访问
-    libraryTarget: 'umd', // 使用这个库可以通过不同方式导入（CommonJS, AMD, global）
-    globalObject: 'this', // 支持浏览器和Node.js环境
+    filename: 'bundle.js',
+    libraryTarget: 'umd',  // 支持多种模块加载方式
+    library: 'state-management-store',
+    globalObject: 'this',
+  },
+  resolve: {
+    extensions: ['.ts', '.js'],  // 解析 .ts 和 .js 文件
   },
   // 模式设置
   mode: 'production', // 使用生产模式进行优化
@@ -28,8 +31,9 @@ module.exports = {
         },
       },
       {
-        test: /\.css$/, // 处理样式文件
-        use: ['style-loader', 'css-loader'],
+        test: /\.ts$/,            // 处理 TypeScript 文件
+        use: 'ts-loader',
+        exclude: /node_modules/,
       },
     ],
   },
